@@ -32,6 +32,9 @@ pipeline {
 
             steps {
                 sh '''
+                    # Afegim 2 línes per docker 
+                    unset DOCKER_HOST
+                    docker login $CI_REGISTRY -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD
                     test -f build/index.html
                     npm test
                 '''
