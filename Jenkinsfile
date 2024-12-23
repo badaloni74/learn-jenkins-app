@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 sh '''
-                    docker info
+                    docker --version
                     ls -la
                     node --version
                     npm --version
